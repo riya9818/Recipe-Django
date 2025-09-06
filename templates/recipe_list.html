@@ -7,7 +7,7 @@
 <ul>    
     {% for recipe in recipes%}
         <li>
-            {{recipe.title}}
+            <a href="{% url 'Recipe_Detail' %}">{{recipe.title}}</a>
         </li>
     {% empty %}
         <li>No recipes yet!</li>
