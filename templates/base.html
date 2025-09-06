@@ -6,12 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
+    <div class="container">
+        <header class="page-header">
+            <nav class="top-menu">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'Recipe_List' %}">
+                    Home
+                </a>
+
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" aria-label="Logout">
+                        Logout
+                    </button>
+                </form>
+
+                {% else %}
+                <a href="{% url 'login' %}" >Login</a>
+                {% endif %}
+            </nav>
+        </header>
+    
     <main>
         {% block content %}
 
         {% endblock %}
     </main>
+    </div>
 </body>
 </html>

@@ -1,0 +1,84 @@
+/* style.css - consistent & cute UI */
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #fdf6f9; /* soft pinky background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    width: 320px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 15px;
+    color: #555;
+    text-align: left;
+}
+
+/* make inputs + button same size + alignment */
+input[type="text"],
+input[type="password"],
+button {
+    width: 100%;
+    height: 42px;              /* 🔑 same height */
+    font-size: 15px;           /* 🔑 consistent font */
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+/* textfields */
+input[type="text"],
+input[type="password"] {
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #ff80ab; /* pink focus */
+    background: #fff;
+    outline: none;
+}
+
+/* button */
+button {
+    border: none;
+    background: #ff80ab; /* soft pink button */
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #ff4d88; /* darker pink */
+}
+
+.errorlist {
+    color: #e63946;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
