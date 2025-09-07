@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <h2>Edit Recipe: {{ recipe.title }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Recipe</button>
+    </form>
+</body>
+</html>

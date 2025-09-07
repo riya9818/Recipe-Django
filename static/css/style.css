@@ -1,14 +1,66 @@
 /* style.css - consistent & cute UI */
+/* ---------------- NAVBAR ---------------- */
+/*
+.top-menu {
+    display: flex;
+    justify-content: space-between;  /* space out iteM /
+    align-items: center;
+    padding: 12px 24px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 
-body {
-    font-family: "Poppins", Arial, sans-serif;
-    background: #fdf6f9; /* soft pinky background */
+.top-menu a {
+    text-decoration: none;
+    color: #ff4d88;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 16px;
+    transition: color 0.2s;
+}
+
+.top-menu a:hover {
+    color: #ff1a66;
+}
+
+/* Logout button styled like link 
+.top-menu form {
+    margin: 0;
+}
+
+.top-menu button {
+    height: 32px;       /* smaller than login form 
+    padding: 0 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #ff80ab;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.top-menu button:hover {
+    background: #ff4d88;
+}
+
+/* ---------------- PAGE CONTENT ---------------- 
+.container {
+    max-width: 1000px;  /* wider for content pages 
+    margin: 0 auto;     /* center horizontally 
+    padding: 20px;
+}
+
+/* make sure only login page is vertically centered 
+body.login-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
+
+
 
 .login-container {
     width: 320px;
@@ -34,19 +86,19 @@ label {
     text-align: left;
 }
 
-/* make inputs + button same size + alignment */
+/* make inputs + button same size + alignment 
 input[type="text"],
 input[type="password"],
 button {
     width: 100%;
-    height: 42px;              /* 🔑 same height */
-    font-size: 15px;           /* 🔑 consistent font */
+    height: 42px;              /* 🔑 same height 
+    font-size: 15px;           /* 🔑 consistent font 
     border-radius: 8px;
     box-sizing: border-box;
     margin-bottom: 8px;
 }
 
-/* textfields */
+/* textfields 
 input[type="text"],
 input[type="password"] {
     padding: 0 12px;
@@ -57,15 +109,15 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #ff80ab; /* pink focus */
+    border-color: #ff80ab; /* pink focus 
     background: #fff;
     outline: none;
 }
 
-/* button */
+/* button 
 button {
     border: none;
-    background: #ff80ab; /* soft pink button */
+    background: #ff80ab; /* soft pink button 
     color: white;
     font-weight: 500;
     margin-top: 10px;
@@ -74,11 +126,57 @@ button {
 }
 
 button:hover {
-    background: #ff4d88; /* darker pink */
+    background: #ff4d88; /* darker pink 
 }
 
 .errorlist {
     color: #e63946;
     font-size: 14px;
     margin-bottom: 8px;
+}
+'''
+/* Navbar container */
+.top-menu {
+    display: flex;
+    justify-content: space-between; /* left & right aligned */
+    align-items: center;
+    background: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Links */
+.nav-link {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #ff4081;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #e73370;
+}
+
+/* Buttons */
+.btn-login, .btn-logout {
+    background: #ff4081;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-login:hover, .btn-logout:hover {
+    background: #e73370;
+}
+
+/* Reset inline form style */
+.top-menu form {
+    margin: 0;
 }
