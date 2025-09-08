@@ -8,7 +8,7 @@
     <form method="POST">
         {% csrf_token %}
         <button type="submit">Yes, delete</button>
-        <a href="{% url 'recipe_detail' recipe.pk %}">Cancel</a>
+        <a href="{% url 'recipe-detail' recipe.pk %}">Cancel</a>
     </form>
 </body>
 </html>

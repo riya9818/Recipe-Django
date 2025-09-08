@@ -45,7 +45,7 @@ def edit_recipe(request, pk):
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
         if form.is_valid():
             form.save()
-            return redirect('recipe_detail', pk=recipe.pk)  # after editing go to detail page
+            return redirect('recipe-detail', pk=recipe.pk)  # after editing go to detail page
     else:
         form = RecipeForm(instance=recipe)
     return render(request, 'edit_recipe.html', {'form': form, 'recipe': recipe})
@@ -55,7 +55,7 @@ def delete_recipe(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
     if request.method == "POST":  # confirm deletion
         recipe.delete()
-        return redirect('home')  # go back to homepage after delete
+        return redirect('recipe-list')  # go back to homepage after delete
     return render(request, 'delete_recipe.html', {'recipe': recipe})
 
 

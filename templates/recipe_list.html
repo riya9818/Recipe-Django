@@ -1,17 +1,35 @@
-
 {% extends "base.html" %}
 
 {% block content %}
-<h1>All Recipes</h1>
+<h1 class="page-title">
+    Popular <span class="title-highlight">Recipes</span> Today
+</h1>
 
-<ul>    
-    {% for recipe in recipes%}
-        <li>
-            <a href="{% url 'recipe-detail' recipe.pk %}">{{recipe.title}}</a>
-        </li>
+<div class="recipe-grid">
+    {% for recipe in recipes %}
+        <div class="recipe-card">
+            
+            <h3 class="recipe-title">{{ recipe.title }}</h3>
+            <p class="recipe-desc">A delicious dish to try out today.</p>
+
+            {% if recipe.image %}
+            <div class="recipe-image">
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+            </div>
+            {% endif %}
+
+            <div class="recipe-meta">
+                <span class="meta-tag">Beginner Friendly</span>
+                <span class="meta-tag">45 mins</span>
+                <span class="meta-tag">2 people</span>
+            </div>
+
+            <a href="{% url 'recipe-detail' recipe.id %}" class="recipe-btn">
+                See Complete Recipe
+            </a>
+        </div>
     {% empty %}
-        <li>No recipes yet!</li>
+        <p>No recipes available.</p>
     {% endfor %}
-</ul>
-
+</div>
 {% endblock %}

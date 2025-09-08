@@ -1,0 +1,226 @@
+/* Login Page Specific Styles */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* Account for fixed navbar */
+  padding: 2rem 1rem;
+}
+
+/* Login Form Container */
+.login-page form {
+  background: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient overlay on form */
+.login-page form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f1c40f, #f39c12, #e67e22);
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* Form Labels */
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.form-label:first-child {
+  margin-top: 0;
+}
+
+/* Form Inputs */
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+  color: #2c3e50;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #f1c40f;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-control:hover {
+  border-color: #f39c12;
+  background: #fff;
+}
+
+/* Submit Button */
+.btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Error Messages */
+.login-page form .errorlist {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.login-page form .errorlist li {
+  background: rgba(231, 76, 60, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  border-left: 3px solid #e74c3c;
+}
+
+/* Non-field errors (general form errors) */
+.login-page .nonfield {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #e74c3c;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Register Link Section - now inside form */
+.register-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.register-link a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+/* Form Title (if you want to add one) */
+.form-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 1rem 0.5rem;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .login-page form {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem 1rem 1rem;
+  }
+  
+  .register-link {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Input validation states */
+.form-control.is-invalid {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.05);
+}
+
+.form-control.is-valid {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.05);
+}
+
+/* Loading state for button */
+.btn-primary:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Smooth animations */
+.login-page form,
+.register-link {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

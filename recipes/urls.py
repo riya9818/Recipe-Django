@@ -7,6 +7,8 @@ urlpatterns = [
     path('', views.recipe_list, name='recipe-list'),
     path('recipe/<int:pk>/', views.recipe_detail, name='recipe-detail'),
     path('recipe/create/',views.create_recipe, name='recipe-create'),
+    path('<int:pk>/edit/', views.edit_recipe, name='edit_recipe'),
+    path('<int:pk>/delete/', views.delete_recipe, name='delete_recipe'),    
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
     path('register/', views.register, name='register'),

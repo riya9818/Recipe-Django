@@ -1,26 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="login-page">
     {% if form.errors and form.non_field_errors %}
-        {{form.non_field_errors}}
+        <div class="nonfield">
+            {{ form.non_field_errors }}
+        </div>
     {% endif %}
-    <body class="login-page">
-        
     
     <form action="" method="post">
         {% csrf_token %}
+        
+        <div class="form-title">Welcome Back</div>
+        <div class="form-subtitle">Sign in to your account</div>
+        
         <label for="username" class="form-label">Username</label>
-        {{form.username.errors}}
-        <input type="text" name="username" class="form-control">
+        {{ form.username.errors }}
+        <input type="text" name="username" class="form-control" id="username" placeholder="Enter your username" value="{{ form.username.value|default:'' }}">
 
-        <label for="password" class="form-label">password</label>
-        {{form.password.errors}}
-        <input type="password" name="password" class="form-control" id="password">
+        <label for="password" class="form-label">Password</label>
+        {{ form.password.errors }}
+        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password">
 
-        <button type="submit" class="btn btn-primary">Login</button>
-
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        
+        <div class="register-link">
+            Don't have an account? 
+            <a href="{% url 'register' %}">Create Account</a>
+        </div>
     </form>
-    </body>
-
+</div>
 {% endblock content %}
